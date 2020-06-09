@@ -1,0 +1,5 @@
+create table applicant(A_id name primary key,name name,email name,phone name,job_title name,status name);
+create table jobs(job_title name primary key,openings integer);
+insert into jobs values ('s',3);
+select * from jobs;
+update jobs set openings = 5 where job_title='2';

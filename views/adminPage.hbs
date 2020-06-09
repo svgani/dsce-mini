@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canva - Jobs at Canva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background: black" class="container text-center text-white">
+    <!-- <div class="navbar mr-5 ml-5 pr-5 pl-5">
+      <h4 class="mt-1" style="text: white">Jobs at Canva</h4>
+      <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <form action="/modifyjobs" method="post" class="form-search">
+            <input class="mt-4" id=submit type="submit" name= "form" value="Modify Jobs" /><br><br>
+          </form>
+        </li>
+        <li class="nav-item">
+          <label ><a href="/admin" class="nav-link text-center mt-3 pt-2 text-white">Logout</a></label>
+        </li>
+      </ul>
+    </div> -->
+    <div class="navbar navbar-expand-sm navbar-dark">
+      <a class="navbar-brand" href="/">Jobs at Canva</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="nav nav-pills justify-content-center">
+          <li class="nav-item">
+            <form action="/modifyjobs" method="post" class="form-search">
+              <input class="mt-4" id=submit type="submit" name= "form" value="Modify Jobs" /><br><br>
+            </form>
+          </li>
+          <li class="nav-item">
+            <form action="/admin" method="get" class="form-search">
+              <input class="mt-4 ml-3" id=submit type="submit" name= "form" value="Logout" /><br><br>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <table class="table text-center text-white mt-4">
+        <thead class="text-success">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Job Title</th>
+          </th>
+        </thead>
+        <tbody>
+          {{#each list}}
+            <tr>
+              {{#each this}}
+                <td>{{this}}</td>
+              {{/each}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+  	</div>
+  </body>
+</html>

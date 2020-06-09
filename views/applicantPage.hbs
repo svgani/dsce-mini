@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canva - Jobs at Canva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background: black" class="container text-center text-white">
+    <div class="container mt-1 pt-3 pb-4">
+  		<h3 class="heading"><a class="text-white" href="/">Jobs at Canva</a></h3>
+  	</div>
+    <div>
+      <table class="table text-center text-white">
+        <thead class="text-success">
+          <tr>
+            <th scope="col">Job title</th>
+            <th scope="col">Openings</th>
+          </th>
+        </thead>
+        <tbody>
+          {{#each list}}
+            <tr>
+              {{#each this}}
+                <td>{{this}}</td>
+              {{/each}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+  	</div>
+    <div class="container mt-1 pt-3 pb-4">
+  		<h4>Apply here</h4>
+      <form action="/applicant" method="post" class="form-search mt-5">
+        <label>Name: </label>
+        <input class="form-control-sm-8" type="text" placeholder="Name" name="name" required> <br><br>
+        <label>Email: </label>
+        <input class="form-control-sm-8" type="email" placeholder="Email" name="email" required> <br><br>
+        <label>Phone: </label>
+        <input class="form-control-sm-8" type="phone" placeholder="Phone Number" name="phone" required> <br><br>
+        <label>Job title: </label>
+        <select id="jobs" name="jobs">
+          {{#each jobs}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select><br><br>
+        <!-- <div class="dropdown mt-1">
+            <button class="btn btn-primary dropdown-toggle" style="width: 150px;" type="button" data-toggle="dropdown">Jobs
+                <span class="caret caret-up"></span>
+            </button>
+            <ul class="dropdown-menu pre-scrollable text-center bg-light">
+                {{#each jobs}}
+                  <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div><br> -->
+        <input id=submit type="submit" name= "form" value="Submit" />
+      </form>
+  	</div>
+  </body>
+</html>

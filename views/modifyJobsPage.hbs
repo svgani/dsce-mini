@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canva - Jobs at Canva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background: black" class="container text-center text-white">
+    <!-- <div class="navbar mr-5 ml-5 pr-5 pl-5">
+      <h4 class="nav navbar-nav navbar-center" style="text: white">Jobs at Canva</h4>
+      <ul class="localnav-menu-items">
+  		    <ol class="localnav-menu-item mt-2">
+            <a href="/admin" class="nav-link text-white">
+              <u>Logout</u>
+            </a>
+          </ol>
+      </ul>
+    </div> -->
+    <div class="navbar navbar-expand-sm navbar-dark">
+      <a class="navbar-brand" href="/">Jobs at Canva</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <form action="/admin" method="get" class="form-search">
+            <input class="mt-4 ml-3" id=submit type="submit" name= "form" value="Logout" /><br><br>
+          </form>
+        </li>
+      </ul>
+      </div>
+    </div>
+    <div>
+      <table class="table text-center text-white mt-3">
+        <thead class="text-success">
+          <tr>
+            <th scope="col">Job title</th>
+            <th scope="col">Openings</th>
+          </th>
+        </thead>
+        <tbody>
+          {{#each list}}
+            <tr>
+              {{#each this}}
+                <td>{{this}}</td>
+              {{/each}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+  	</div>
+    <div class="container mt-1 pt-3 pb-2 mb-3">
+      <ul class="nav nav-pills justify-content-center mt-2 mb-2">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#create">Create / Update</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#delete">Delete</a>
+        </li>
+      </ul>
+  	</div>
+
+    <div class="tab-content">
+      <h6>{{err}}</h6><br>
+      <div class="tab-pane active" id="create">
+        <form action="/modifyJobsCre" method="post" class="form-search">
+          <label class="ml-5">Job title: </label>
+          <input class="form-control-sm-8" type="text" placeholder="Name" name="name" required> <br><br>
+          <label>Job openings: </label>
+          <input class="form-control-sm-8" type="number" placeholder="Number" name="number" required> <br><br>
+          <input id=submit type="submit" name= "form" value="Done" />
+        </form>
+      </div>
+
+      <div class="tab-pane fade" id="delete">
+        <form action="/modifyJobsDel" method="post" class="form-search">
+          <label class="ml-5">Job title: </label>
+          <input class="form-control-sm-8" type="text" placeholder="Name" name="name" required> <br><br>
+          <input id=submit type="submit" name= "form" value="Done" />
+        </form><br>
+      </div>
+    </div>
+  </body>
+</html>
